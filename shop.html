@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - APA Watches</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>APA WATCHES</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <aside>
+    <h3>Filters</h3>
+    <label><input type="checkbox" value="APA"> APA</label><br>
+    <label><input type="checkbox" value="Tissot"> Tissot</label><br>
+    <button onclick="filterProducts()">Apply</button>
+  </aside>
+
+  <main id="products"></main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

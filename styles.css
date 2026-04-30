@@ -1,7 +1,5 @@
-body {
-  font-family: Arial;
-  margin: 0;
-}
+/* --- GLOBAL --- */
+body { font-family: Arial; margin: 0; }
 
 header {
   display: flex;
@@ -11,10 +9,7 @@ header {
   align-items: center;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-}
+nav a { margin: 0 10px; text-decoration: none; color: #333; }
 
 .hero {
   height: 80vh;
@@ -25,98 +20,66 @@ nav a {
   padding-top: 150px;
 }
 
-/* SEARCH */
 #searchInput {
-  width: 350px;              
-  padding: 6px 10px;         
-  font-size: 14px;
-  border: none;
-  border-bottom: 2px solid #333;  
-  background: transparent;
-  outline: none;
-  text-align: center;        
+  width: 350px; padding: 6px 10px; font-size: 14px;
+  border: none; border-bottom: 2px solid #333;
+  background: transparent; outline: none; text-align: center;
 }
 
-#searchInput:focus {
-  border-bottom: 2px solid brown;
-}
-
-/* LAYOUT */
+/* --- SHOP PAGE LAYOUT --- */
 .container {
-  display: flex;
+  display: flex; /* Sidebar and Products side-by-side */
+  align-items: flex-start;
+  padding: 20px;
 }
 
 aside {
-  width: 200px;
+  width: 250px;
   padding: 20px;
   background: #f5f5f5;
 }
 
 main {
   flex: 1;
-  padding: 20px;
+  padding-left: 40px; /* Space between filters and watches */
 }
 
-/* PRODUCTS */
-.shop-page .product {
+/* --- PRODUCT DISPLAY (BIGGER) --- */
+.product {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   border-bottom: 1px solid #ccc;
   padding: 20px 0;
-  transition: 0.3s;
 }
 
-.shop-page .product img {
-  width: 120px;
-  height: 120px;
+.product img {
+  width: 180px; /* Bigger size */
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  background: #f0f0f0;
 }
 
+.product-info h3 { margin: 0; font-size: 22px; }
+.product-info p { margin: 10px 0; font-weight: bold; font-size: 18px; }
+
+/* --- BANNERS --- */
 .shop-page .banner {
   width: 90%;
   height: 250px;
-  margin: 60px auto;
-  background-color: #f8f8f8; 
-  background-image: url('images./shoppage-banner.png'); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain; 
+  margin: 40px auto;
+  background: #f8f8f8 url('images./shoppage-banner.png') no-repeat center/contain;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* CONTACT PAGE BANNER */
 .contact-footer-banner {
   width: 100%;
   height: 400px;
-  margin-top: 40px;
   background: url('images./Contact-banner.png') center/cover no-repeat;
   border-top: 5px solid brown;
 }
 
-button {
-  background: brown;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.contact {
-  padding: 50px;
-}
-
-input, textarea {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-/* POPUP STYLING */
+/* --- POPUP --- */
 .review-popup {
   position: fixed;
   bottom: -150px;
@@ -126,12 +89,14 @@ input, textarea {
   padding: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   border-left: 5px solid brown;
-  border-radius: 8px;
   transition: bottom 0.6s ease-in-out;
   z-index: 1000;
 }
-
 .review-popup.show { bottom: 20px; }
-.stars { color: #f39c12; font-size: 18px; }
-.customer-name { font-size: 12px; font-weight: bold; color: brown; }
-.close-popup { position: absolute; top: 5px; right: 10px; cursor: pointer; color: #999; }
+.close-popup { position: absolute; top: 5px; right: 10px; cursor: pointer; }
+
+/* MEDIA QUERIES (Requirement B) */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  header { flex-direction: column; gap: 10px; }
+}

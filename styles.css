@@ -8,6 +8,7 @@ header {
   justify-content: space-between;
   padding: 20px;
   background: #eee;
+  align-items: center;
 }
 
 nav a {
@@ -15,7 +16,7 @@ nav a {
   text-decoration: none;
 }
 
-/* HERO BANNER WITH YOUR IMAGE */
+
 .hero {
   height: 80vh;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
@@ -25,13 +26,23 @@ nav a {
   padding-top: 150px;
 }
 
-.btn {
-  background: brown;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
+/* SEARCH */
+#searchInput {
+  width: 350px;              
+  padding: 6px 10px;         
+  font-size: 14px;
+  border: none;
+  border-bottom: 2px solid #333;  
+  background: transparent;
+  outline: none;
+  text-align: center;        
 }
 
+#searchInput:focus {
+  border-bottom: 2px solid brown;
+}
+
+/* LAYOUT */
 .container {
   display: flex;
 }
@@ -47,18 +58,65 @@ main {
   padding: 20px;
 }
 
-.product {
+/* PRODUCTS */
+.shop-page .product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  transition: 0.3s;
 }
 
+.shop-page .product:hover {
+  transform: translateY(-3px);
+}
+
+.shop-page .product img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f0f0f0;
+}
+
+.shop-page .product-info h3 {
+  margin: 0;
+}
+
+.shop-page .product-info p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+
+.shop-page .banner {
+  width: 90%;
+  height: 250px;
+  margin: 60px auto;
+  
+  background-color: #f8f8f8; 
+  background-image: url('images./shoppage-banner.png'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /
+  
+  border-radius: 12px;
+  
+  /* subtle depth */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* BUTTON */
 button {
   background: brown;
   color: white;
   border: none;
   padding: 10px;
+  cursor: pointer;
 }
 
+/* CONTACT */
 .contact {
   padding: 50px;
 }
@@ -68,20 +126,4 @@ input, textarea {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
-}
-
-#searchInput {
-  width: 350px;              
-  padding: 6px 10px;         
-  font-size: 14px;
-  border: none;
-  border-bottom: 2px solid #333;  
-  background: transparent;
-  outline: none;
-  text-align: center;        
-  justify-self: center;
-}
-
-#searchInput:focus {
-  border-bottom: 2px solid brown;
 }

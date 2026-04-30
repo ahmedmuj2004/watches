@@ -1,9 +1,18 @@
 const products = [
-  { name: "APA Green Dial", brand: "APA", price: 895 },
-  { name: "Tissot Chrono", brand: "Tissot", price: 650 }
+  { 
+    name: "APA Green Dial", 
+    brand: "APA", 
+    price: 895,
+    image: ('images./green-dial.png')
+  },
+  { 
+    name: "Tissot Chrono", 
+    brand: "Tissot", 
+    price: 650,
+    image: ('images./Tissot.png')
+  }
 ];
 
-// Render products
 function renderProducts(list) {
   const container = document.getElementById("products");
   if (!container) return;
@@ -13,15 +22,18 @@ function renderProducts(list) {
   list.forEach(p => {
     container.innerHTML += `
       <div class="product">
-        <h3>${p.name}</h3>
-        <p>$${p.price}</p>
-        <button onclick="addToCart('${p.name}')">Add to Cart</button>
+        <img src="${p.image}" alt="${p.name}">
+        
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>$${p.price}</p>
+          <button onclick="addToCart('${p.name}')">Add to Cart</button>
+        </div>
       </div>
     `;
   });
 }
 
-// Filter logic
 function filterProducts() {
   const checked = [...document.querySelectorAll("input[type=checkbox]:checked")]
     .map(c => c.value);
@@ -34,7 +46,6 @@ function filterProducts() {
   }
 }
 
-// Cart
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(product);
@@ -42,20 +53,8 @@ function addToCart(product) {
   alert(product + " added to cart!");
 }
 
-// Contact form
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    document.getElementById("formMessage").innerText =
-      "Message sent successfully!";
-    form.reset();
-  });
-}
-
-// Load products on page load
 renderProducts(products);
-// SEARCH (SHOP PAGE)
+
 function searchProducts() {
   const input = document.getElementById("searchInput");
   if (!input) return;
@@ -68,28 +67,4 @@ function searchProducts() {
   );
 
   renderProducts(filtered);
-}
-
-// REDIRECT SEARCH (HOME & CONTACT)
-function goToShop() {
-  const input = document.getElementById("searchInput").value;
-  window.location.href = "shop.html?search=" + encodeURIComponent(input);
-}
-
-// HANDLE SEARCH FROM URL
-function handleSearchFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  const search = params.get("search");
-
-  if (search) {
-    const input = document.getElementById("searchInput");
-    if (input) input.value = search;
-
-    const filtered = products.filter(p =>
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.brand.toLowerCase().includes(search.toLowerCase())
-    );
-
-    renderProducts(filtered);
-  }
 }

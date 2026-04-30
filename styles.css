@@ -15,9 +15,11 @@ nav a {
   text-decoration: none;
 }
 
+/* HERO BANNER WITH YOUR IMAGE */
 .hero {
   height: 80vh;
-  background: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314') center/cover;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('images./banner.png') center/cover no-repeat;
   color: white;
   text-align: center;
   padding-top: 150px;

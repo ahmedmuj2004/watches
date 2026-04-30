@@ -69,3 +69,19 @@ input, textarea {
   margin: 10px 0;
   padding: 10px;
 }
+
+#searchInput {
+  width: 350px;              
+  padding: 6px 10px;         
+  font-size: 14px;
+  border: none;
+  border-bottom: 2px solid #333;  
+  background: transparent;
+  outline: none;
+  text-align: center;        
+  justify-self: center;
+}
+
+#searchInput:focus {
+  border-bottom: 2px solid brown;
+}

@@ -16,7 +16,6 @@ nav a {
   text-decoration: none;
 }
 
-
 .hero {
   height: 80vh;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
@@ -68,10 +67,6 @@ main {
   transition: 0.3s;
 }
 
-.shop-page .product:hover {
-  transform: translateY(-3px);
-}
-
 .shop-page .product img {
   width: 120px;
   height: 120px;
@@ -80,34 +75,28 @@ main {
   background: #f0f0f0;
 }
 
-.shop-page .product-info h3 {
-  margin: 0;
-}
-
-.shop-page .product-info p {
-  margin: 5px 0;
-  font-weight: bold;
-}
-
-
 .shop-page .banner {
   width: 90%;
   height: 250px;
   margin: 60px auto;
-  
   background-color: #f8f8f8; 
   background-image: url('images./shoppage-banner.png'); 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; /
-  
+  background-size: contain; 
   border-radius: 12px;
-  
-  /* subtle depth */
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* BUTTON */
+/* CONTACT PAGE BANNER */
+.contact-footer-banner {
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  background: url('images./Contact-banner.png') center/cover no-repeat;
+  border-top: 5px solid brown;
+}
+
 button {
   background: brown;
   color: white;
@@ -116,7 +105,6 @@ button {
   cursor: pointer;
 }
 
-/* CONTACT */
 .contact {
   padding: 50px;
 }
@@ -127,3 +115,23 @@ input, textarea {
   margin: 10px 0;
   padding: 10px;
 }
+
+/* POPUP STYLING */
+.review-popup {
+  position: fixed;
+  bottom: -150px;
+  right: 20px;
+  width: 280px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-left: 5px solid brown;
+  border-radius: 8px;
+  transition: bottom 0.6s ease-in-out;
+  z-index: 1000;
+}
+
+.review-popup.show { bottom: 20px; }
+.stars { color: #f39c12; font-size: 18px; }
+.customer-name { font-size: 12px; font-weight: bold; color: brown; }
+.close-popup { position: absolute; top: 5px; right: 10px; cursor: pointer; color: #999; }

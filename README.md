@@ -54,7 +54,7 @@ Challenges & Resolutions:
 The filter panel was occupying more space on mobile devices.
 Resolution: I employed a CSS media query to make the filter panel invisible on screens less than 768 pixels wide and included a 'Filter' button that slides out the menu when clicked.
 Website Repository link:  https://github.com/ahmedmuj2004/watches
-Live website link:  file:///Users/ahmedmujtaba/Desktop/watches/index.html
+Live website link: https://ahmedmuj2004.github.io/watches/
 Testing
 User Story	Task Tested	Result
 First time Visitor	Navigated from home page to shop page by clicking the button	Test passed the button worked, and the user went from one page to the other.
